@@ -1,0 +1,917 @@
+{
+ "budget": {
+  "lead": {
+   "zh": 148,
+   "nums": 2
+  },
+  "problems": {
+   "1": {
+    "zh": 296,
+    "nums": 4
+   },
+   "2": {
+    "zh": 296,
+    "nums": 4
+   },
+   "3": {
+    "zh": 296,
+    "nums": 4
+   }
+  },
+  "robustness": {
+   "zh": 0,
+   "nums": 0
+  },
+  "tail": {
+   "zh": 102,
+   "nums": 0,
+   "source": "evaluation"
+  },
+  "total_zh": 1137,
+  "total_nums": 24,
+  "corpus": {
+   "zh_chars": {
+    "min": 585,
+    "p25": 911.0,
+    "p50": 1137,
+    "p75": 1377.0,
+    "max": 1697,
+    "mean": 1137.08
+   },
+   "num_count": {
+    "min": 0,
+    "p25": 4.0,
+    "p50": 15,
+    "p75": 24.0,
+    "max": 52,
+    "mean": 15.62
+   },
+   "sig4_count": {
+    "min": 0,
+    "p25": 0.0,
+    "p50": 0,
+    "p75": 5.0,
+    "max": 14,
+    "mean": 2.56
+   },
+   "max_nums_per_sentence": {
+    "min": 0,
+    "p25": 2.0,
+    "p50": 4,
+    "p75": 6.0,
+    "max": 18,
+    "mean": 4.31
+   },
+   "kw_count": {
+    "min": 1,
+    "p25": 4.0,
+    "p50": 5,
+    "p75": 7.0,
+    "max": 15,
+    "mean": 5.64
+   },
+   "lead_zh": {
+    "min": 2,
+    "p25": 123.0,
+    "p50": 156,
+    "p75": 243.0,
+    "max": 844,
+    "mean": 190.64
+   },
+   "sent_p90": {
+    "min": 56,
+    "p25": 77.0,
+    "p50": 91,
+    "p75": 100.0,
+    "max": 383,
+    "mean": 96.51
+   }
+  }
+ },
+ "lead": [
+  {
+   "role": "restatement",
+   "sentence": "需要说明的是，本文所用数据为演示用合成数据，治疗窗亦为假想设定，所有结论只在建模方法层面有意义"
+  },
+  {
+   "role": "restatement",
+   "sentence": "R4：每 12 h 给药 375 mg——的稳态峰浓度、稳态谷浓度、峰谷波动与达稳时间，判断哪些方案能使稳态浓度始终落在治疗窗内，并给出推荐方案与理由"
+  },
+  {
+   "role": "restatement",
+   "sentence": "问题三 分析模型参数的不确定性与个体差异对问题二结论的影响，说明推荐方案的稳健性"
+  },
+  {
+   "role": "analysis",
+   "sentence": "三个问题构成一条递进链：问题一由数据估计药动学参数，问题二把参数代入多次给药模型比较方案，问题三检验参数误差与个体差异是否会改变问题二的结论"
+  },
+  {
+   "role": "analysis",
+   "sentence": "其三，样本只有 3 人各 11 个有效点，需要同时给出个体拟合与合并拟合，并用置信区间和留一交叉验证说明结果可信度"
+  },
+  {
+   "role": "analysis",
+   "sentence": "问题二的结论依赖合并拟合参数，而参数带有估计误差，且三名受试者的消除速率相差约 30%"
+  },
+  {
+   "role": "analysis",
+   "sentence": "从参数的估计协方差抽样看结论成立的概率"
+  }
+ ],
+ "problems": [
+  {
+   "problem": 1,
+   "title": "五、问题一：血药浓度模型与参数估计",
+   "file": "05_problem1.md",
+   "method_chain": [
+    "问题分析",
+    "数据审计与清洗",
+    "模型建立",
+    "结果分析与验证",
+    "小结"
+   ],
+   "bold_terms": [],
+   "numbers": [
+    {
+     "value": "1.0",
+     "norm": "1",
+     "score": 8.0,
+     "occurrences": 9,
+     "tags": [
+      "data",
+      "metric",
+      "param",
+      "result",
+      "summary",
+      "table"
+     ],
+     "context": "三名受试者的吸收速率相近，消除速率有明显差异：S03 的 $k_e$（0.2045）比 S01、S02（0.157、0.148）高约 30%，半衰期短 1.0–1.3 h，AUC 低约 25–35%",
+     "window": "8）高约 30%，半衰期短 【1.0】–1.3 h，AUC 低约",
+     "subsection": "5.4 结果分析与验证",
+     "line": 59,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "4.12",
+     "norm": "4.12",
+     "score": 7.5,
+     "occurrences": 3,
+     "tags": [
+      "data",
+      "metric",
+      "param",
+      "result",
+      "summary",
+      "table"
+     ],
+     "context": "群体典型参数 $A=14.96$ mg/L、$k_a=1.154$ 1/h、$k_e=0.1682$ 1/h，半衰期 4.12 h，个体拟合 $R^2>0.989$",
+     "window": "1682$ 1/h，半衰期 【4.12】 h，个体拟合 $R^2>0",
+     "subsection": "5.5 小结",
+     "line": 78,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "95%",
+     "norm": "95%",
+     "score": 7.0,
+     "occurrences": 4,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "param"
+     ],
+     "context": "参数标准误由残差方差（自由度 $n-3$）校正的协方差矩阵 $\\hat\\Sigma$ 给出，95% 置信区间用 $t_{n-3}$ 分位数",
+     "window": "hat\\Sigma$ 给出，【95%】 置信区间用 $t_{n-3",
+     "subsection": "5.3 模型建立",
+     "line": 31,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "0.650",
+     "norm": "0.65",
+     "score": 7.0,
+     "occurrences": 2,
+     "tags": [
+      "data",
+      "metric",
+      "result",
+      "table"
+     ],
+     "context": "合并拟合 RMSE 0.650 mg/L 明显大于个体拟合（0.17–0.27 mg/L），其差额来自个体差异而非模型结构不当",
+     "window": "合并拟合 RMSE 【0.650】 mg/L 明显大于个体拟合",
+     "subsection": "5.4 结果分析与验证",
+     "line": 61,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "0.989",
+     "norm": "0.989",
+     "score": 6.5,
+     "occurrences": 2,
+     "tags": [
+      "data",
+      "metric",
+      "param",
+      "result",
+      "summary"
+     ],
+     "context": "个体拟合 $R^2$ 均大于 0.989，留一 RMSE 与拟合 RMSE 之比为 1.35–1.46，说明模型没有过拟合",
+     "window": "体拟合 $R^2$ 均大于 【0.989】，留一 RMSE 与拟合 R",
+     "subsection": "5.4 结果分析与验证",
+     "line": 61,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "30%",
+     "norm": "30%",
+     "score": 6.5,
+     "occurrences": 1,
+     "tags": [
+      "data",
+      "metric",
+      "result"
+     ],
+     "context": "三名受试者的吸收速率相近，消除速率有明显差异：S03 的 $k_e$（0.2045）比 S01、S02（0.157、0.148）高约 30%，半衰期短 1.0–1.3 h，AUC 低约 25–35%",
+     "window": ".157、0.148）高约 【30%】，半衰期短 1.0–1.3",
+     "subsection": "5.4 结果分析与验证",
+     "line": 59,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "1.3",
+     "norm": "1.3",
+     "score": 6.5,
+     "occurrences": 1,
+     "tags": [
+      "data",
+      "metric",
+      "result"
+     ],
+     "context": "三名受试者的吸收速率相近，消除速率有明显差异：S03 的 $k_e$（0.2045）比 S01、S02（0.157、0.148）高约 30%，半衰期短 1.0–1.3 h，AUC 低约 25–35%",
+     "window": "30%，半衰期短 1.0–【1.3】 h，AUC 低约 25–3",
+     "subsection": "5.4 结果分析与验证",
+     "line": 59,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "35%",
+     "norm": "35%",
+     "score": 6.5,
+     "occurrences": 1,
+     "tags": [
+      "data",
+      "metric",
+      "result"
+     ],
+     "context": "三名受试者的吸收速率相近，消除速率有明显差异：S03 的 $k_e$（0.2045）比 S01、S02（0.157、0.148）高约 30%，半衰期短 1.0–1.3 h，AUC 低约 25–35%",
+     "window": "3 h，AUC 低约 25–【35%】",
+     "subsection": "5.4 结果分析与验证",
+     "line": 59,
+     "must_hedge": [],
+     "round_hint": ""
+    }
+   ],
+   "claims": [
+    {
+     "score": 3.0,
+     "sentence": "离群值的识别采用稳健统计：对每名受试者，用相邻两个有效点在 $(t,\\ln C)$ 平面上线性插值预测第 $i$ 点，得到留一残差 $r_i=\\ln C_i-\\hat{\\ln C_i}$（首末两点不参与）",
+     "subsection": "5.2 数据审计与清洗",
+     "line": 11,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "所有 36 行数据均保留并附标记列，最终进入拟合的有效点 33 个，每人 11 个",
+     "subsection": "5.2 数据审计与清洗",
+     "line": 15,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "个体拟合 $R^2$ 均大于 0.989，留一 RMSE 与拟合 RMSE 之比为 1.35–1.46，说明模型没有过拟合",
+     "subsection": "5.4 结果分析与验证",
+     "line": 61,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "置信带较窄，表明参数不确定性对曲线形状的影响有限",
+     "subsection": "5.4 结果分析与验证",
+     "line": 72,
+     "must_hedge": [
+      "不确定"
+     ]
+    },
+    {
+     "score": 2.0,
+     "sentence": "合并拟合得到的参数是问题二、三的输入",
+     "subsection": "5.1 问题分析",
+     "line": 5,
+     "must_hedge": []
+    }
+   ]
+  },
+  {
+   "problem": 2,
+   "title": "六、问题二：多次给药方案比较",
+   "file": "06_problem2.md",
+   "method_chain": [
+    "问题分析",
+    "模型建立",
+    "模型求解",
+    "结果分析与验证",
+    "小结"
+   ],
+   "bold_terms": [
+    "推荐方案 R2（250 mg q6h）"
+   ],
+   "numbers": [
+    {
+     "value": "12",
+     "norm": "12",
+     "score": 9.5,
+     "occurrences": 5,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "param",
+      "result",
+      "summary"
+     ],
+     "context": "2. R4 把 R1 的单次剂量降到 375 mg，峰浓度降到 8.16 mg/L，但谷浓度同时降到 1.72 mg/L，窗内时间占比反而由 0.863 降到 0.713——在半衰期约 4 h 的药物上，12 h 间隔本身就使峰谷比达到 $e^{k_e\\tau}\\approx 7.5$，单靠调剂量无法同时满足上下限",
+     "window": "半衰期约 4 h 的药物上，【12】 h 间隔本身就使峰谷比达到",
+     "subsection": "6.4 结果分析与验证",
+     "line": 44,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "7.82",
+     "norm": "7.82",
+     "score": 9.5,
+     "occurrences": 3,
+     "tags": [
+      "data",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "summary",
+      "table"
+     ],
+     "context": "对半衰期约 4 h 的药物，给药间隔是决定稳态浓度能否维持在窗内的关键：间隔 12 h 及以上时谷浓度必然跌破下限，间隔 6 h 的 R2 谷 4.28、峰 7.82 mg/L 全程在窗内，故推荐 R2",
+     "window": "的 R2 谷 4.28、峰 【7.82】 mg/L 全程在窗内，故推",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": [
+      "仅为"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "4.28",
+     "norm": "4.28",
+     "score": 9.0,
+     "occurrences": 3,
+     "tags": [
+      "data",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "summary",
+      "table"
+     ],
+     "context": "对半衰期约 4 h 的药物，给药间隔是决定稳态浓度能否维持在窗内的关键：间隔 12 h 及以上时谷浓度必然跌破下限，间隔 6 h 的 R2 谷 4.28、峰 7.82 mg/L 全程在窗内，故推荐 R2",
+     "window": "间隔 6 h 的 R2 谷 【4.28】、峰 7.82 mg/L 全",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": [
+      "仅为"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "6",
+     "norm": "6",
+     "score": 9.0,
+     "occurrences": 2,
+     "tags": [
+      "data",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "summary"
+     ],
+     "context": "对半衰期约 4 h 的药物，给药间隔是决定稳态浓度能否维持在窗内的关键：间隔 12 h 及以上时谷浓度必然跌破下限，间隔 6 h 的 R2 谷 4.28、峰 7.82 mg/L 全程在窗内，故推荐 R2",
+     "window": "时谷浓度必然跌破下限，间隔 【6】 h 的 R2 谷 4.28",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": [
+      "仅为"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "4",
+     "norm": "4",
+     "score": 9.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "param",
+      "result",
+      "summary"
+     ],
+     "context": "对半衰期约 4 h 的药物，给药间隔是决定稳态浓度能否维持在窗内的关键：间隔 12 h 及以上时谷浓度必然跌破下限，间隔 6 h 的 R2 谷 4.28、峰 7.82 mg/L 全程在窗内，故推荐 R2",
+     "window": "对半衰期约 【4】 h 的药物，给药间隔是决定",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "1.72",
+     "norm": "1.72",
+     "score": 8.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "2. R4 把 R1 的单次剂量降到 375 mg，峰浓度降到 8.16 mg/L，但谷浓度同时降到 1.72 mg/L，窗内时间占比反而由 0.863 降到 0.713——在半衰期约 4 h 的药物上，12 h 间隔本身就使峰谷比达到 $e^{k_e\\tau}\\approx 7.5$，单靠调剂量无法同时满足上下限",
+     "window": "mg/L，但谷浓度同时降到 【1.72】 mg/L，窗内时间占比反而",
+     "subsection": "6.4 结果分析与验证",
+     "line": 44,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "0.863",
+     "norm": "0.863",
+     "score": 7.5,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "2. R4 把 R1 的单次剂量降到 375 mg，峰浓度降到 8.16 mg/L，但谷浓度同时降到 1.72 mg/L，窗内时间占比反而由 0.863 降到 0.713——在半衰期约 4 h 的药物上，12 h 间隔本身就使峰谷比达到 $e^{k_e\\tau}\\approx 7.5$，单靠调剂量无法同时满足上下限",
+     "window": "g/L，窗内时间占比反而由 【0.863】 降到 0.713——在半衰",
+     "subsection": "6.4 结果分析与验证",
+     "line": 44,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "0.713",
+     "norm": "0.713",
+     "score": 7.5,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "2. R4 把 R1 的单次剂量降到 375 mg，峰浓度降到 8.16 mg/L，但谷浓度同时降到 1.72 mg/L，窗内时间占比反而由 0.863 降到 0.713——在半衰期约 4 h 的药物上，12 h 间隔本身就使峰谷比达到 $e^{k_e\\tau}\\approx 7.5$，单靠调剂量无法同时满足上下限",
+     "window": "比反而由 0.863 降到 【0.713】——在半衰期约 4 h 的药",
+     "subsection": "6.4 结果分析与验证",
+     "line": 44,
+     "must_hedge": [],
+     "round_hint": ""
+    }
+   ],
+   "claims": [
+    {
+     "score": 6.0,
+     "sentence": "对半衰期约 4 h 的药物，给药间隔是决定稳态浓度能否维持在窗内的关键：间隔 12 h 及以上时谷浓度必然跌破下限，间隔 6 h 的 R2 谷 4.28、峰 7.82 mg/L 全程在窗内，故推荐 R2",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": []
+    },
+    {
+     "score": 6.0,
+     "sentence": "该结论建立在合并拟合参数之上，其对参数误差与个体差异的稳健性在问题三中检验",
+     "subsection": "6.5 小结",
+     "line": 52,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "稳态平均浓度 $C_{ss,avg}=AUC_D/\\tau$，峰谷波动 $PTF=(C_{ss,\\max}-C_{ss,\\min})/C_{ss,avg}$，蓄积比 $R_{ac}=1/(1-e^{-k_e\\tau})$，达到 90% 稳态所需时间 $t_{90}=\\ln 10/k_e$",
+     "subsection": "6.2 模型建立",
+     "line": 17,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "若无方案满足，则报告窗内时间占比最高者并说明其未达标",
+     "subsection": "6.2 模型建立",
+     "line": 21,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "2. R4 把 R1 的单次剂量降到 375 mg，峰浓度降到 8.16 mg/L，但谷浓度同时降到 1.72 mg/L，窗内时间占比反而由 0.863 降到 0.713——在半衰期约 4 h 的药物上，12 h 间隔本身就使峰谷比达到 $e^{k_e\\tau}\\approx 7.5$，单靠调剂量无法同时满足上下限",
+     "subsection": "6.4 结果分析与验证",
+     "line": 44,
+     "must_hedge": []
+    }
+   ]
+  },
+  {
+   "problem": 3,
+   "title": "七、问题三：灵敏度分析与模型检验",
+   "file": "08_sensitivity.md",
+   "method_chain": [
+    "问题分析",
+    "局部灵敏度",
+    "参数不确定性的 Monte Carlo 传播",
+    "个体差异",
+    "数据清洗的影响",
+    "小结"
+   ],
+   "bold_terms": [],
+   "numbers": [
+    {
+     "value": "100%",
+     "norm": "100%",
+     "score": 9.5,
+     "occurrences": 3,
+     "tags": [
+      "compare",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "summary",
+      "table"
+     ],
+     "context": "推荐方案 R2 对参数估计误差稳健：$k_e$ 是最敏感参数，但 ±20% 扰动与 Monte Carlo 抽样均未使 R2 跌出治疗窗，达标概率 100%",
+     "window": "R2 跌出治疗窗，达标概率 【100%】",
+     "subsection": "7.6 小结",
+     "line": 64,
+     "must_hedge": [
+      "不确定"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "95%",
+     "norm": "95%",
+     "score": 8.5,
+     "occurrences": 3,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "从合并拟合的多元正态分布 $N(\\hat\\theta,\\hat\\Sigma)$ 抽样（固定随机种子，剔除 $A\\le 0$、$k_e\\le 0$ 或 $k_a\\le k_e$ 的样本后保留 2000 组），对每组参数重算四种方案的稳态峰谷浓度，得到 95% 区间与\"始终在窗内\"的概率（，（b））",
+     "window": "种方案的稳态峰谷浓度，得到 【95%】 区间与\"始终在窗内\"的概率",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 23,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "8.48",
+     "norm": "8.48",
+     "score": 8.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "R2 的谷浓度 2.5% 分位 3.69 mg/L 仍高于下限，峰浓度 97.5% 分位 8.48 mg/L 远低于上限，在参数不确定性范围内达标概率为 100%",
+     "window": "，峰浓度 97.5% 分位 【8.48】 mg/L 远低于上限，在参",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 36,
+     "must_hedge": [
+      "不确定"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "3.69",
+     "norm": "3.69",
+     "score": 8.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "hedged",
+      "metric",
+      "param",
+      "result",
+      "table"
+     ],
+     "context": "R2 的谷浓度 2.5% 分位 3.69 mg/L 仍高于下限，峰浓度 97.5% 分位 8.48 mg/L 远低于上限，在参数不确定性范围内达标概率为 100%",
+     "window": "的谷浓度 2.5% 分位 【3.69】 mg/L 仍高于下限，峰浓",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 36,
+     "must_hedge": [
+      "不确定"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "35",
+     "norm": "35",
+     "score": 8.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "result",
+      "table"
+     ],
+     "context": "为说明 5.2 节清洗的必要性，用未清洗数据（仅去掉缺失值，保留离群值与负值，35 点）重新做合并拟合，对比见",
+     "window": "掉缺失值，保留离群值与负值，【35】 点）重新做合并拟合，对比见",
+     "subsection": "7.5 数据清洗的影响",
+     "line": 53,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "47%",
+     "norm": "47%",
+     "score": 8.0,
+     "occurrences": 2,
+     "tags": [
+      "compare",
+      "data",
+      "metric",
+      "result",
+      "summary"
+     ],
+     "context": "一个离群点和一个负值使 $A$ 高估 98%、$k_e$ 高估 47%、半衰期低估 1.3 h，RMSE 变为 3.9 倍",
+     "window": "98%、$k_e$ 高估 【47%】、半衰期低估 1.3 h，R",
+     "subsection": "7.5 数据清洗的影响",
+     "line": 53,
+     "must_hedge": [],
+     "round_hint": ""
+    },
+    {
+     "value": "2.5%",
+     "norm": "2.5%",
+     "score": 7.5,
+     "occurrences": 1,
+     "tags": [
+      "compare",
+      "hedged",
+      "metric",
+      "param",
+      "result"
+     ],
+     "context": "R2 的谷浓度 2.5% 分位 3.69 mg/L 仍高于下限，峰浓度 97.5% 分位 8.48 mg/L 远低于上限，在参数不确定性范围内达标概率为 100%",
+     "window": "R2 的谷浓度 【2.5%】 分位 3.69 mg/L",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 36,
+     "must_hedge": [
+      "不确定"
+     ],
+     "round_hint": ""
+    },
+    {
+     "value": "97.5%",
+     "norm": "97.5%",
+     "score": 7.5,
+     "occurrences": 1,
+     "tags": [
+      "compare",
+      "hedged",
+      "metric",
+      "param",
+      "result"
+     ],
+     "context": "R2 的谷浓度 2.5% 分位 3.69 mg/L 仍高于下限，峰浓度 97.5% 分位 8.48 mg/L 远低于上限，在参数不确定性范围内达标概率为 100%",
+     "window": "g/L 仍高于下限，峰浓度 【97.5%】 分位 8.48 mg/L",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 36,
+     "must_hedge": [
+      "不确定"
+     ],
+     "round_hint": ""
+    }
+   ],
+   "claims": [
+    {
+     "score": 6.0,
+     "sentence": "推荐方案 R2 对参数估计误差稳健：$k_e$ 是最敏感参数，但 ±20% 扰动与 Monte Carlo 抽样均未使 R2 跌出治疗窗，达标概率 100%",
+     "subsection": "7.6 小结",
+     "line": 64,
+     "must_hedge": []
+    },
+    {
+     "score": 4.0,
+     "sentence": "为说明 5.2 节清洗的必要性，用未清洗数据（仅去掉缺失值，保留离群值与负值，35 点）重新做合并拟合，对比见",
+     "subsection": "7.5 数据清洗的影响",
+     "line": 53,
+     "must_hedge": []
+    },
+    {
+     "score": 4.0,
+     "sentence": "数据清洗对结论至关重要，未清洗数据会使消除速率高估 47%",
+     "subsection": "7.6 小结",
+     "line": 64,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "问题二推荐 R2 的依据是合并拟合参数，而参数带有估计误差（$k_e$ 的相对标准误约 9%），且三名受试者的 $k_e$ 相差约 30%",
+     "subsection": "7.1 问题分析",
+     "line": 5,
+     "must_hedge": []
+    },
+    {
+     "score": 3.0,
+     "sentence": "从合并拟合的多元正态分布 $N(\\hat\\theta,\\hat\\Sigma)$ 抽样（固定随机种子，剔除 $A\\le 0$、$k_e\\le 0$ 或 $k_a\\le k_e$ 的样本后保留 2000 组），对每组参数重算四种方案的稳态峰谷浓度，得到 95% 区间与\"始终在窗内\"的概率（，（b））",
+     "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+     "line": 23,
+     "must_hedge": []
+    }
+   ]
+  }
+ ],
+ "robustness": null,
+ "tail": [
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "机理清晰，参数可解释"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "不确定性量化完整"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "数据处理可追溯"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "三问环环相扣"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "全程可复现"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "结构扩展"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "误差模型"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "方案设计推广"
+  },
+  {
+   "role": "evaluation/加粗要点",
+   "sentence": "数据审计推广"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "机理清晰，参数可解释：Bateman 模型的三个参数分别对应吸收、消除与剂量–容积组合，派生的半衰期、达峰时间、AUC 都有明确药动学含义，多次给药的稳态特征有解析表达式，无需数值积分"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "2. 不确定性量化完整：参数标准误、delta 法置信带、留一交叉验证、Monte Carlo 传播层层递进，问题二的推荐附带达标概率而不是单一判定"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "4. 三问环环相扣：问题一的参数与协方差是问题二、三的唯一输入，问题三的个体复算反过来指出了推荐方案的薄弱环节（快消除个体谷浓度余量小）"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "2. 合并拟合以等权最小二乘处理个体差异，协方差混合了测量误差与个体间变异"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "4. 治疗窗为假想设定，结论对窗的边界敏感（下限降至 2 mg/L 时 R1 亦达标）"
+  },
+  {
+   "role": "evaluation",
+   "sentence": "本文结论不构成任何临床建议"
+  }
+ ],
+ "keywords": [
+  "口服药物血药浓度的一室模型参数估计与给药方案模拟",
+  "一室模型",
+  "Bateman 方程",
+  "非线性最小二乘",
+  "多次给药",
+  "稳态浓度",
+  "灵敏度分析"
+ ],
+ "hedged_claims": [
+  {
+   "problem": 1,
+   "sentence": "问题一要求从 36 个含瑕疵的观测值估计吸收、消除速率常数并给出不确定性",
+   "subsection": "5.1 问题分析",
+   "line": 5,
+   "words": [
+    "不确定"
+   ]
+  },
+  {
+   "problem": 1,
+   "sentence": "S03 在 24 h 的浓度为 −0.12 mg/L，物理上不可能，视为低于检测限或录入错误",
+   "subsection": "5.2 数据审计与清洗",
+   "line": 9,
+   "words": [
+    "可能"
+   ]
+  },
+  {
+   "problem": 1,
+   "sentence": "置信带较窄，表明参数不确定性对曲线形状的影响有限",
+   "subsection": "5.4 结果分析与验证",
+   "line": 72,
+   "words": [
+    "不确定"
+   ]
+  },
+  {
+   "problem": 1,
+   "sentence": "残差随时间无系统趋势，消除相没有出现双指数下降的迹象，支持一室模型假设",
+   "subsection": "5.4 结果分析与验证",
+   "line": 72,
+   "words": [
+    "假设"
+   ]
+  },
+  {
+   "problem": 2,
+   "sentence": "间隔 6 h 的 R2 峰 7.82、谷 4.28 mg/L，全程在窗内，峰谷波动 0.56 仅为 R1 的 41%",
+   "subsection": "6.4 结果分析与验证",
+   "line": 44,
+   "words": [
+    "仅为"
+   ]
+  },
+  {
+   "problem": 3,
+   "sentence": "问题三从四个层面检验这一推荐是否稳健：单因素局部扰动、参数不确定性的 Monte Carlo 传播、个体参数复算以及数据清洗前后的对照",
+   "subsection": "7.1 问题分析",
+   "line": 5,
+   "words": [
+    "不确定"
+   ]
+  },
+  {
+   "problem": 3,
+   "sentence": "R2 的谷浓度 2.5% 分位 3.69 mg/L 仍高于下限，峰浓度 97.5% 分位 8.48 mg/L 远低于上限，在参数不确定性范围内达标概率为 100%",
+   "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+   "line": 36,
+   "words": [
+    "不确定"
+   ]
+  },
+  {
+   "problem": 3,
+   "sentence": "需要说明，合并拟合的协方差同时吸收了测量误差与个体差异，该区间应理解为群体典型值的不确定性，而非个体预测区间",
+   "subsection": "7.3 参数不确定性的 Monte Carlo 传播",
+   "line": 36,
+   "words": [
+    "不确定"
+   ]
+  },
+  {
+   "problem": 3,
+   "sentence": "若真实人群的 $k_e$ 分布更宽，250 mg q6h 对快消除者可能不足，这是将结论推广时需要重点关注的地方",
+   "subsection": "7.4 个体差异",
+   "line": 40,
+   "words": [
+    "可能"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pdf
+/corpus/
+/projects/
+.DS_Store

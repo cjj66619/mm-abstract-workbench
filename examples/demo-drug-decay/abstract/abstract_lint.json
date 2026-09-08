@@ -1,0 +1,35 @@
+{
+ "source": "00_abstract.md",
+ "metrics": {
+  "zh_chars": 733,
+  "num_count": 12,
+  "num_per_k": 16.4,
+  "dec_count": 2,
+  "sig4_count": 0,
+  "max_nums_per_sentence": 3,
+  "sent_count": 16,
+  "sent_median": 47.5,
+  "sent_p90": 75,
+  "sent_max": 76,
+  "problem_mentions": 4,
+  "problem_count": 3,
+  "problems": [
+   1,
+   2,
+   3
+  ],
+  "lead_zh": 102,
+  "has_tail": true,
+  "kw_count": 5,
+  "en_abbr_count": 1,
+  "en_abbr_per_k": 1.36,
+  "paren_per_k": 1.36,
+  "quote_per_k": 0.0,
+  "slash_list": 0,
+  "ai_phrase_count": 0,
+  "ai_hits": {}
+ },
+ "items": [],
+ "fail": 0,
+ "warn": 0
+}

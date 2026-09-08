@@ -1,0 +1,96 @@
+{
+ "source": "00_abstract.md",
+ "metrics": {
+  "zh_chars": 554,
+  "num_count": 49,
+  "num_per_k": 88.4,
+  "dec_count": 26,
+  "sig4_count": 5,
+  "max_nums_per_sentence": 10,
+  "sent_count": 17,
+  "sent_median": 29,
+  "sent_p90": 63,
+  "sent_max": 64,
+  "problem_mentions": 3,
+  "problem_count": 3,
+  "problems": [
+   1,
+   2,
+   3
+  ],
+  "lead_zh": 89,
+  "has_tail": true,
+  "kw_count": 6,
+  "en_abbr_count": 3,
+  "en_abbr_per_k": 5.42,
+  "paren_per_k": 21.66,
+  "quote_per_k": 0.0,
+  "slash_list": 0,
+  "ai_phrase_count": 0,
+  "ai_hits": {}
+ },
+ "items": [
+  {
+   "level": "WARN",
+   "rule": "A16",
+   "msg": "摘要含 6 处行内公式；优秀摘要几乎不放公式，能用文字说清就不要用",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A05",
+   "msg": "问题2 段落没有看到方法/模型词（模型/方法/算法/建立/构建/提出…）",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A01",
+   "msg": "摘要仅 554 汉字，明显短于语料 P25 = 911.0，可能漏掉了方法或结论",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A02",
+   "msg": "数字个数 = 49，高于语料 P75 = 24.0（P50 = 15）",
+   "where": ""
+  },
+  {
+   "level": "FAIL",
+   "rule": "A02",
+   "msg": "每千汉字数字数 = 88.4，超过优秀论文语料中该项的最大值 39.2（P50 = 12.5）",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A02",
+   "msg": "小数个数 = 26，高于语料 P75 = 11.0（P50 = 2）",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A04",
+   "msg": "单句最多数字数 = 10，高于语料 P75 = 6.0（P50 = 4）",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A04",
+   "msg": "一句话堆了 10 个数字：合并拟合得到 $k_a=1.154\\pm0.124$ 1/h、$k_e=0.1682\\pm0.0154$ 1/h、消除半衰期 4.12 h（…",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A13",
+   "msg": "每千字括号数 = 21.66，高于语料 P75 = 3.49（P50 = 1.36）",
+   "where": ""
+  },
+  {
+   "level": "WARN",
+   "rule": "A15",
+   "msg": "每千字英文缩写数 = 5.42，高于语料 P75 = 3.74（P50 = 2.05）",
+   "where": ""
+  }
+ ],
+ "fail": 1,
+ "warn": 9
+}

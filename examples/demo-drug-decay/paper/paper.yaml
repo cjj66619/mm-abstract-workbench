@@ -1,0 +1,11 @@
+title: "口服药物血药浓度的一室模型参数估计与给药方案模拟"
+lang: zh
+keywords:
+  - 一室模型
+  - Bateman 方程
+  - 非线性最小二乘
+  - 多次给药
+  - 稳态浓度
+  - 灵敏度分析
+# sections 为空时按 paper/sections/ 文件名排序；00_abstract.md 作为摘要
+sections: []
